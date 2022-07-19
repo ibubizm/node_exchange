@@ -1,0 +1,25 @@
+version: '3.0'
+
+service:
+  main:
+    container_name: main
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - 4000:4000
+      - 9229:9229
+    comand: npm run start:dev
+    depends_on:
+      - mysqldb
+    restart: always
+mysqldb:
+  image: mysql:8.0
+  container_name: mysql
+  ports: 
+    - 3306:3306
+  restart: always
