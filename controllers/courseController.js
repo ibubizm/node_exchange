@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('../db.config')
 const ExchangeService = require('../services/exchangeService')
 
 class ExchangeController {
@@ -29,7 +29,6 @@ class ExchangeController {
     db.query(
       'SELECT * FROM exchange_rate ORDER BY id DESC LIMIT 1',
       async (err, result) => {
-        console.log(result[0])
         const currentTime = new Date(result[0].date).toLocaleDateString(
           'ru-RU',
           { timeZone: 'Europe/Moscow' }

@@ -1,5 +1,5 @@
 const axios = require('axios')
-const db = require('../db')
+const db = require('../db.config')
 
 class ExchangeService {
   async addDataToDb() {

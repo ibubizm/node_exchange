@@ -5,7 +5,7 @@ const schedule = require('node-schedule')
 const ExchangeService = require('./services/exchangeService')
 const logger = require('./middleware/logger')
 
-const router = require('./router')
+const router = require('./router/router')
 
 const app = express()
 const port = process.env.PORT || 4000

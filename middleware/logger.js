@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('../db.config')
 
 const logger = (req, res, next) => {
   const path = req.path

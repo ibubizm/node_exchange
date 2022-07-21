@@ -1,4 +1,4 @@
-const db = require('../db')
+const db = require('../db.config')
 
 const convertLogger = (req, res, next) => {
   const { firstValue, secondValue, amount } = req.body
