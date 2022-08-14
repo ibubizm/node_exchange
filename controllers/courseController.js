@@ -43,7 +43,7 @@ class ExchangeController {
 
   async convert(req, res) {
     try {
-      const { firstValue, secondValue, amount } = req.body
+      const { firstValue, secondValue, amount } = req.query
       db.query(
         'SELECT * FROM exchange_rate ORDER BY id DESC LIMIT 1',
         (err, result) => {
